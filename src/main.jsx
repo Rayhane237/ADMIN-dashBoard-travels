@@ -6,11 +6,15 @@ import { AuthProvider } from "./context/AuthContext";
 import App from "./App";
 import  "./index.css";
 
+import { ThemeModeProvider } from "./context/ThemeContext";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <ThemeModeProvider>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </ThemeModeProvider>
   </StrictMode>
 );
