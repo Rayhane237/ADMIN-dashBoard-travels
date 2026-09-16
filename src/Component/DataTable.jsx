@@ -1,8 +1,7 @@
-// src/Components/DataTable.jsx
 import { DataGrid } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
 
-export default function DataTable({ rows, columns, loading }) {
+export default function DataTable({ rows, columns, loading, rowHeight }) {
   return (
     <Box sx={{ height: 500, width: "100%" }}>
       <DataGrid
@@ -11,6 +10,7 @@ export default function DataTable({ rows, columns, loading }) {
         loading={loading}
         getRowId={(row) => row._id}
         pageSizeOptions={[10, 25, 50]}
+        rowHeight={rowHeight}
         initialState={{
           pagination: { paginationModel: { pageSize: 10 } },
         }}

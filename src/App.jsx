@@ -9,6 +9,9 @@ import Hotels from "./pages/Hotels/Hotels";
 import Messages from "./pages/Messages/Messages";
 import Users from "./pages/Users/Users";
 
+import FlightListings from "./pages/FlightListings/FlightListings";
+import HotelListings from "./pages/HotelListings/HotelListings";
+
 const router = createBrowserRouter([
   {
     path: "/login",
@@ -26,6 +29,8 @@ const router = createBrowserRouter([
           { path: "/hotels", element: <Hotels /> },
           { path: "/messages", element: <Messages /> },
           { path: "/users", element: <Users /> },
+          { path: "/flightListings", element: <FlightListings /> },
+          { path: "/hotelListings" , element: <HotelListings /> }
         ],
       },
     ],

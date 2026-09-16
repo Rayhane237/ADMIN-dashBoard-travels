@@ -9,9 +9,10 @@ const links = [
   { to: "/flights", label: "Flights" },
   { to: "/hotels", label: "Hotels" },
   { to: "/messages", label: "Messages" },
-  { to: "/users", label: "Users" },
-];
-
+  { to: "/users"  , label:"Users"},
+  { to: "/flightListings" , label:"Flight Listings"},
+  { to: "/hotelListings", label: "Hotel Listings" },
+]
 export default function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();

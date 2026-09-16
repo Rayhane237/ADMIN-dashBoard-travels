@@ -1,4 +1,3 @@
-// src/pages/Flights/Flights.jsx
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -30,13 +29,52 @@ export default function Flights() {
   };
 
   const columns = [
-    { field: "from", headerName: "From", width: 130 },
-    { field: "to", headerName: "To", width: 130 },
-    { field: "date", headerName: "Date", width: 150,
-      valueFormatter: (value) => new Date(value).toLocaleDateString() },
+    {
+      field: "image",
+      headerName: "",
+      width: 110,
+      sortable: false,
+      renderCell: (params) =>
+        params.row.listing?.image ? (
+          <img
+            src={params.row.listing.image}
+            alt=""
+            style={{
+              width: "100%",
+              height: "85%",
+              objectFit: "cover",
+              borderRadius: 10,
+              boxShadow: "0 1px 4px rgba(0,0,0,0.15)",
+            }}
+          />
+        ) : null,
+    },
+    {
+      field: "destination",
+      headerName: "Destination",
+      width: 160,
+      // Old bookings (pre-migration) have no `listing` at all — the `?.`
+      // stops this from throwing when row.listing is undefined, and the
+      // `?? "—"` shows a dash instead of a blank cell in that case.
+      valueGetter: (value, row) => row.listing?.destination ?? "—",
+    },
+    {
+      field: "price",
+      headerName: "Price",
+      width: 100,
+      valueGetter: (value, row) => row.listing?.price ?? "—",
+    },
+    {
+      field: "date",
+      headerName: "Date",
+      width: 150,
+      valueFormatter: (value) => new Date(value).toLocaleDateString(),
+    },
     { field: "passenger", headerName: "Passenger", width: 160 },
     {
-      field: "actions", headerName: "Actions", width: 100,
+      field: "actions",
+      headerName: "Actions",
+      width: 100,
       renderCell: (params) => (
         <Button size="small" color="error" onClick={() => setToDelete(params.row._id)}>
           Delete
@@ -47,7 +85,7 @@ export default function Flights() {
 
   return (
     <>
-      <DataTable rows={rows} columns={columns} loading={loading} />
+      <DataTable rows={rows} columns={columns} loading={loading} rowHeight={90} />
       <ConfirmDialog
         open={Boolean(toDelete)}
         title="Delete flight booking?"
