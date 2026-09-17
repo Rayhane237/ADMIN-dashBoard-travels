@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -32,7 +33,7 @@ export default function Flights() {
     {
       field: "image",
       headerName: "",
-      width: 110,
+      width: 90,
       sortable: false,
       renderCell: (params) =>
         params.row.listing?.image ? (
@@ -52,7 +53,7 @@ export default function Flights() {
     {
       field: "destination",
       headerName: "Destination",
-      width: 160,
+      flex: 1.2,
       // Old bookings (pre-migration) have no `listing` at all — the `?.`
       // stops this from throwing when row.listing is undefined, and the
       // `?? "—"` shows a dash instead of a blank cell in that case.
@@ -61,20 +62,20 @@ export default function Flights() {
     {
       field: "price",
       headerName: "Price",
-      width: 100,
+      flex: 0.6,
       valueGetter: (value, row) => row.listing?.price ?? "—",
     },
     {
       field: "date",
       headerName: "Date",
-      width: 150,
+      flex: 1,
       valueFormatter: (value) => new Date(value).toLocaleDateString(),
     },
-    { field: "passenger", headerName: "Passenger", width: 160 },
+    { field: "passenger", headerName: "Passenger", flex: 1 },
     {
       field: "actions",
       headerName: "Actions",
-      width: 100,
+      flex: 0.7,
       renderCell: (params) => (
         <Button size="small" color="error" onClick={() => setToDelete(params.row._id)}>
           Delete

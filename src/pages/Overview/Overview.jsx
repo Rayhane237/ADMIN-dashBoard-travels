@@ -25,6 +25,12 @@ export default function Overview() {
       <Grid item xs={12} sm={6} md={3}>
         <StatCard label="Users" value={stats?.totalUsers ?? "—"} />
       </Grid>
+      <Grid item xs={12} sm={6} md={3}>
+        <StatCard label="Listed Flights" value={stats?.totalFlightListings ?? "—"} />
+      </Grid>
+      <Grid item xs={12} sm={6} md={3}>
+        <StatCard label="Listed Hotels" value={stats?.totalHotelListings ?? "—"} />
+      </Grid>
     </Grid>
   );
 }

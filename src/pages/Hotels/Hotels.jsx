@@ -32,7 +32,7 @@ export default function Hotels() {
     {
       field: "image",
       headerName: "",
-      width: 110,
+      width: 90,
       sortable: false,
       renderCell: (params) =>
         params.row.listing?.image ? (
@@ -52,7 +52,7 @@ export default function Hotels() {
     {
       field: "hotelName",
       headerName: "Hotel",
-      width: 180,
+      flex: 1.2,
       // Old bookings (pre-migration) have no `listing` at all — the `?.`
       // stops this from throwing when row.listing is undefined, and the
       // `?? "—"` shows a dash instead of a blank cell in that case.
@@ -61,26 +61,26 @@ export default function Hotels() {
     {
       field: "price",
       headerName: "Price",
-      width: 100,
+      flex: 0.6,
       valueGetter: (value, row) => row.listing?.price ?? "—",
     },
     {
       field: "checkIn",
       headerName: "Check-in",
-      width: 140,
+      flex: 1,
       valueFormatter: (value) => new Date(value).toLocaleDateString(),
     },
     {
       field: "checkOut",
       headerName: "Check-out",
-      width: 140,
+      flex: 1,
       valueFormatter: (value) => new Date(value).toLocaleDateString(),
     },
-    { field: "guestName", headerName: "Guest", width: 160 },
+    { field: "guestName", headerName: "Guest", flex: 1 },
     {
       field: "actions",
       headerName: "Actions",
-      width: 100,
+      flex: 0.7,
       renderCell: (params) => (
         <Button size="small" color="error" onClick={() => setToDelete(params.row._id)}>
           Delete
