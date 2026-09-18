@@ -12,14 +12,14 @@ import {
   deleteFlightListing,
 } from "../../api/flightListings";
 
-// Describes the form fields for THIS resource only — HotelListings.jsx
-// will pass its own version of this array (hotelName instead of destination)
-// to the exact same ListingFormDialog component.
+
 const formFields = [
   { name: "destination", label: "Destination" },
   { name: "price", label: "Price", type: "number" },
   { name: "image", label: "Image URL" },
   { name: "description", label: "Description", multiline: true },
+  { name: "isActive", label: "Active", type: "checkbox" },
+
 ];
 
 export default function FlightListings() {
@@ -76,6 +76,12 @@ export default function FlightListings() {
           </Button>
         </>
       ),
+    },
+    {
+     field: "isActive",
+     headerName: "Active",
+     width: 90,
+     renderCell: (params) => (params.row.isActive ? "Yes" : "No"),
     },
   ];
 

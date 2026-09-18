@@ -12,6 +12,7 @@ const links = [
   { to: "/users"  , label:"Users"},
   { to: "/flightListings" , label:"Flight Listings"},
   { to: "/hotelListings", label: "Hotel Listings" },
+   { to: "/employees", label: "Employees"},
 ]
 export default function Sidebar() {
   const navigate = useNavigate();

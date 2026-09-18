@@ -12,6 +12,9 @@ import Users from "./pages/Users/Users";
 import FlightListings from "./pages/FlightListings/FlightListings";
 import HotelListings from "./pages/HotelListings/HotelListings";
 
+import Employees from "./pages/Employees/Employees";
+
+
 const router = createBrowserRouter([
   {
     path: "/login",
@@ -30,7 +33,8 @@ const router = createBrowserRouter([
           { path: "/messages", element: <Messages /> },
           { path: "/users", element: <Users /> },
           { path: "/flightListings", element: <FlightListings /> },
-          { path: "/hotelListings" , element: <HotelListings /> }
+          { path: "/hotelListings" , element: <HotelListings /> },
+          { path: "/employees" , element: <Employees /> }
         ],
       },
     ],

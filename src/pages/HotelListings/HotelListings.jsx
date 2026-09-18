@@ -17,6 +17,7 @@ const formFields = [
   { name: "price", label: "Price", type: "number" },
   { name: "image", label: "Image URL" },
   { name: "description", label: "Description", multiline: true },
+  { name: "isActive", label: "Active", type: "checkbox" },
 ];
 
 export default function HotelListings() {
@@ -73,6 +74,12 @@ export default function HotelListings() {
           </Button>
         </>
       ),
+    },
+    {
+      field: "isActive",
+      headerName: "Active",
+      width: 90,
+      renderCell: (params) => (params.row.isActive ? "Yes" : "No"),
     },
   ];
 
