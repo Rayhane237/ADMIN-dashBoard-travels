@@ -1,4 +1,9 @@
 # Phnes Travels — Admin Dashboard
+<img width="950" height="382" alt="image" src="https://github.com/user-attachments/assets/fd202a99-17b7-4771-b800-e7637834015a" />
+<img width="950" height="346" alt="image" src="https://github.com/user-attachments/assets/c3ee81ec-0833-4b11-89f6-618dede1d710" />
+
+<img width="949" height="392" alt="image" src="https://github.com/user-attachments/assets/e93a9230-83eb-4c89-b148-376a01427a21" />
+
 
 The administration panel for Phnes Travels, a full-stack travel booking platform. This dashboard gives administrators full control over flight and hotel listings, customer bookings, user accounts, and site content.
 
